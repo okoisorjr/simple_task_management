@@ -18,11 +18,8 @@ export class User {
   @Prop({ required: true, default: Roles.CUSTOMER })
   role: Roles;
 
-  @Prop({ default: false })
-  verified: boolean;
-
   @Prop()
-  refreshToken: string;
+  refresh_token: string;
 
 }
 

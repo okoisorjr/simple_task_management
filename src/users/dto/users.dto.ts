@@ -1,43 +1,50 @@
-import { IsEmail, IsEnum, IsNotEmpty, IsStrongPassword } from 'class-validator';
+import { IsEnum, IsNotEmpty } from 'class-validator';
 import { Roles } from 'src/Shared/rolesEnum';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateUserDto {
+export class UsersDto {
+  @ApiProperty({
+    example: '6648c39dd7d9a29f8e0110ff'
+  })
+  _id: 'string';
+
   @ApiProperty({
     example: 'string',
-    required: true,
   })
-  @IsNotEmpty()
   phone: string;
 
   @ApiProperty({
     example: 'string',
-    required: true,
   })
-  @IsNotEmpty()
   fullname: string;
 
   @ApiProperty({
     example: 'string',
-    required: true,
   })
-  @IsNotEmpty()
-  @IsEmail()
   email: string;
 
   @ApiProperty({
     example: 'string',
-    required: true,
   })
-  @IsNotEmpty()
-  @IsStrongPassword()
-  password: string;
+  access_token: string;
+
+  @ApiProperty({
+    example: 'string',
+  })
+  refresh_token: string;
 
   @ApiProperty({
     example: 'ADMIN',
-    required: true,
   })
-  @IsNotEmpty()
-  @IsEnum(Roles)
   role: Roles;
+
+  @ApiProperty({
+    example: new Date(),
+  })
+  createdAt: Date;
+
+  @ApiProperty({
+    example: new Date(),
+  })
+  updatedAt: Date;
 }

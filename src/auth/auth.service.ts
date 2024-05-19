@@ -10,10 +10,12 @@ import { CreateUserDto } from 'src/users/dto/create-user.dto';
 @Injectable()
 export class AuthService {
   constructor(
+    private jwtService: JwtService,
     private readonly usersService: UsersService,
     @InjectModel(User.name) readonly userModel: mongoose.Model<User>,
-    private jwtService: JwtService,
-  ) {}
+  ) {
+
+  }
 
   async create(createUserDto: CreateUserDto) {
     return await this.usersService.create(createUserDto);
@@ -29,7 +31,7 @@ export class AuthService {
       { upsert: true, new: true },
     );
     return {
-      user: currentUser,
+      currentUser,
       access_token,
     };
   }
@@ -47,8 +49,8 @@ export class AuthService {
     return { access_token, refresh_token };
   }
 
-  async refresh(payload: any) {
+  /* async refresh(payload: any) {
     
     const {access_token, refresh_token} = await this.generateTokens(payload);
-  }
+  } */
 }
