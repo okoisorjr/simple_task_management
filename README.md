@@ -4,7 +4,7 @@ This is a simple task management api which can be used to manage daily tasks or 
 
 # Built With
 
-Nestjs
+Nestjs, MongoDB
 
 ## Prerequisite
 
@@ -56,10 +56,14 @@ Start Server
   yarn start: dev
 ```
 
-Go to browser for documentation
+## Documentation
+
+[Documentation](http://34.229.222.203:5000/api-docs)
+
+Or 
 
 ```bash
-  `http://localhost:${PORT}/api-docs`
+  `http://localhost:${PORT}/api-docs` //local documentation
 ```
 
 ## Features
