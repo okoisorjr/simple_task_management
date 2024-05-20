@@ -63,7 +63,7 @@ Go to browser for documentation
 ```
 
 ## Screenshots
-https://asset.cloudinary.com/dlm5luazv/aacea0e9997ac076042858a53aeaa126
+![Model](https://github.com/okoisorjr/simple_task_management/blob/master/Screenshot%20(449).png)
 
 ## Features
 
