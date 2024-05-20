@@ -142,7 +142,7 @@ const App = () => {
 
     // Listen for messages from the server
     socket.on('task_updates', (data) => {
-      setMessages((prevMessages) => [...prevMessages, data]);
+      setTasks((prevTasks) => [...prevTasks, data]);
     });
 
     // Cleanup the event listener on unmount
@@ -156,8 +156,8 @@ const App = () => {
       <h1>WebSocket Messages</h1>
       
       <ul>
-        {messages.map((msg, index) => (
-          <li key={index}>{msg}</li>
+        {tasks.map((task) => (
+          <li key={task._id}>{task.task}</li>
         ))}
       </ul>
     </div>
