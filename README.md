@@ -72,6 +72,7 @@ You can create new tasks, update a task, list tasks, delete tasks.
 # Auth Module
 
 Tasks can only be created and updated by authenticated users, a task can only be updated by the user who created the task, a user can list only tasks created by themselves. However a user with an ADMIN role can do all.
+
 ## Documentation
 Visit the [Documentation](http://34.229.222.203:5000/api-docs)
 
@@ -80,7 +81,49 @@ While the server is running locally you can access it from here
 ```bash
   `http://localhost:${PORT}/api-docs`
 ```
+## Optimizations
 
+Implemented a Websocket Gateway to enable realtime data updates from server on every new task added and task updates
+
+To connect to the socket using the react library 
+```bash
+  npm install socket.io-client
+```
+Set Up the WebSocket Connection in React
+
+Create a WebSocket connection in your React application. You can use a hook to manage the WebSocket connection and handle events.
+```Javascript
+  // src/hooks/useSocket.js
+import { useEffect, useState } from 'react';
+import { io } from 'socket.io-client';
+
+const useSocket = (url) => {
+  const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    const socketInstance = io(url);
+
+    setSocket(socketInstance);
+
+    socketInstance.on('connect', () => {
+      console.log('Connected to WebSocket server');
+    });
+
+    socketInstance.on('disconnect', () => {
+      console.log('Disconnected from WebSocket server');
+    });
+
+    return () => {
+      socketInstance.disconnect();
+    };
+  }, [url]);
+
+  return socket;
+};
+
+export default useSocket;
+
+```
 ## 🛠 Skills
 
 Javascript, HTML, CSS, Nodejs, Nestjs, React, Angular, tailwind, bootstrap...
