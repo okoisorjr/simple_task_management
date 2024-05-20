@@ -124,6 +124,56 @@ const useSocket = (url) => {
 export default useSocket;
 
 ```
+Use the WebSocket Connection in a Component
+Use the useSocket hook in a component to interact with the WebSocket server.
+
+This custom hook, useSocket, initializes a WebSocket connection to the specified URL and manages the connection lifecycle.
+```Javascript
+  // src/App.js
+import React, { useState, useEffect } from 'react';
+import useSocket from './hooks/useSocket';
+
+const App = () => {
+  const [messages, setMessages] = useState([]);
+  const socket = useSocket('http://localhost:3000'); // Update the URL to your server
+
+  useEffect(() => {
+    if (!socket) return;
+
+    // Listen for messages from the server
+    socket.on('eventToClient', (data) => {
+      setMessages((prevMessages) => [...prevMessages, data]);
+    });
+
+    // Cleanup the event listener on unmount
+    return () => {
+      socket.off('eventToClient');
+    };
+  }, [socket]);
+
+  // Function to send a message to the server
+  const sendMessage = () => {
+    if (socket) {
+      socket.emit('message', 'Hello, server!');
+    }
+  };
+
+  return (
+    <div>
+      <h1>WebSocket Messages</h1>
+      <button onClick={sendMessage}>Send Message</button>
+      <ul>
+        {messages.map((msg, index) => (
+          <li key={index}>{msg}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
+
+```
 ## 🛠 Skills
 
 Javascript, HTML, CSS, Nodejs, Nestjs, React, Angular, tailwind, bootstrap...
