@@ -81,9 +81,9 @@ While the server is running locally you can access it from here
 ```bash
   `http://localhost:${PORT}/api-docs`
 ```
-## Optimizations
+## Optimizations (WebSocket Gateway)
 
-Implemented a Websocket Gateway to enable realtime data updates from server on every new task added and task updates
+Implementation of a Websocket Gateway to enable realtime data updates on the client from the server in the event that a new task is added or an exisiting task is updated
 
 To connect to the socket using the react library 
 ```bash
