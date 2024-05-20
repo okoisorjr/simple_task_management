@@ -76,9 +76,9 @@ Tasks can only be created and updated by authenticated users, a task can only be
 Visit the [Documentation](http://34.229.222.203:5000/api-docs)
 
 Or 
-
+While the server is running locally you can access it from here
 ```bash
-  `http://localhost:${PORT}/api-docs` //local documentation on server
+  `http://localhost:${PORT}/api-docs`
 ```
 
 ## 🛠 Skills
