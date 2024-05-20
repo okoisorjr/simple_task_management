@@ -1,73 +1,93 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# About the Project
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This is a simple task management api which can be used to manage daily tasks or activities as the case may be. This project was implemented with the nestjs framework leveraging the web socket gateway provided by the framework to enable real time update to clients when new tasks are created or existing tasks are updated. This project was built as an assessment exercise for a recruitment purpose.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Built With
 
-## Description
+Nestjs
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisite
+
+node, npm, nest cli and yarn
+
+```bash
+  npm install @nestjs/cli yarn
+```
 
 ## Installation
 
-```bash
-$ yarn install
-```
-
-## Running the app
+Clone the repo
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+  git clone https://github.com/okoisorjr/simple_task_management.git
 ```
 
-## Test
+Go to the project directory
 
 ```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+  cd project-name
 ```
 
-## Support
+Install dependencies
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+  yarn
+```
 
-## Stay in touch
+## Environment Variables
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+To run this project, you will need to add the following environment variables to your .env file
 
-## License
+`MONGO_URI `
 
-Nest is [MIT licensed](LICENSE).
+`ACCESS_TOKEN_SECRET`
+
+`PORT`
+
+`CLIENT_PORT`
+
+# Getting started
+
+Start Server
+
+```bash
+  nest start
+  or
+  yarn start: dev
+```
+
+Go to browser for documentation
+
+```bash
+  `http://localhost:${PORT}/api-docs`
+```
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+## Features
+
+- Users
+- Tasks
+- Auth
+
+# Users Module
+
+You can list registered users, create new users, update users, view a users detail and delete a user.
+
+# Tasks Module
+
+You can create new tasks, update a task, list tasks, delete tasks.
+
+# Auth Module
+
+Tasks can only be created and updated by authenticated users, a task can only be updated by the user who created the task, a user can list only tasks created by themselves. However a user with an ADMIN role can do all.
+
+## 🛠 Skills
+
+Javascript, HTML, CSS, Nodejs, Nestjs, React, Angular, tailwind, bootstrap...
+
+## Feedback
+
+If you have any feedback, please reach out to me at okoisorjr@gmail.com
