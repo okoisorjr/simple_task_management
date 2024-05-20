@@ -62,9 +62,6 @@ Go to browser for documentation
   `http://localhost:${PORT}/api-docs`
 ```
 
-## Screenshots
-![Model](https://raw.githubusercontent.com/okoisorjr/simple_task_management/blob/master/Screenshot%20(449).png)
-
 ## Features
 
 - Users
