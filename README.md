@@ -134,34 +134,27 @@ import React, { useState, useEffect } from 'react';
 import useSocket from './hooks/useSocket';
 
 const App = () => {
-  const [messages, setMessages] = useState([]);
-  const socket = useSocket('http://localhost:3000'); // Update the URL to your server
+  const [tasks, setTasks] = useState([]);
+  const socket = useSocket('http://localhost:PORT_NO'); // Update the URL to your server
 
   useEffect(() => {
     if (!socket) return;
 
     // Listen for messages from the server
-    socket.on('eventToClient', (data) => {
+    socket.on('task_updates', (data) => {
       setMessages((prevMessages) => [...prevMessages, data]);
     });
 
     // Cleanup the event listener on unmount
     return () => {
-      socket.off('eventToClient');
+      socket.off('task_updates');
     };
   }, [socket]);
-
-  // Function to send a message to the server
-  const sendMessage = () => {
-    if (socket) {
-      socket.emit('message', 'Hello, server!');
-    }
-  };
 
   return (
     <div>
       <h1>WebSocket Messages</h1>
-      <button onClick={sendMessage}>Send Message</button>
+      
       <ul>
         {messages.map((msg, index) => (
           <li key={index}>{msg}</li>
