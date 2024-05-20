@@ -58,12 +58,12 @@ Start Server
 
 ## Documentation
 
-[Documentation](http://34.229.222.203:5000/api-docs)
+Visit the [Documentation](http://34.229.222.203:5000/api-docs)
 
 Or 
 
 ```bash
-  `http://localhost:${PORT}/api-docs` //local documentation
+  `http://localhost:${PORT}/api-docs` //local documentation on server
 ```
 
 ## Features
