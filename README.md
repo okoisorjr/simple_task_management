@@ -63,7 +63,7 @@ Go to browser for documentation
 ```
 
 ## Screenshots
-![Model](https://github.com/okoisorjr/simple_task_management/blob/master/Screenshot%20(449).png)
+![Model](https://raw.githubusercontent.com/okoisorjr/simple_task_management/blob/master/Screenshot%20(449).png)
 
 ## Features
 
