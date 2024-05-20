@@ -74,7 +74,9 @@ You can create new tasks, update a task, list tasks, delete tasks.
 Tasks can only be created and updated by authenticated users, a task can only be updated by the user who created the task, a user can list only tasks created by themselves. However a user with an ADMIN role can do all.
 ## Documentation
 Visit the [Documentation](http://34.229.222.203:5000/api-docs)
+
 Or 
+
 ```bash
   `http://localhost:${PORT}/api-docs` //local documentation on server
 ```
